@@ -1,3 +1,6 @@
+const closeButton = document.getElementById('close-button') as HTMLButtonElement;
+const modal = document.getElementById('modal') as HTMLDivElement;
+
 async function fetchData() {
   const response = await fetch('https://api.jsonbin.io/v3/b/6630fd9be41b4d34e4ecd1f9')
   const data = await response.json()
@@ -18,10 +21,15 @@ async function fetchData() {
   })
 }
 
+fetchData()
+
+/* EVENTS */
+
 function showModal(description: string) {
-  const modal = document.getElementById('modal')!
   modal.hidden = false
   document.getElementById('description')!.textContent = description
 }
 
-fetchData()
+closeButton.addEventListener('click', () => {
+  modal.hidden = true;
+})

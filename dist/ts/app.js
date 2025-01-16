@@ -35,6 +35,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var closeButton = document.getElementById('close-button');
+var modal = document.getElementById('modal');
 function fetchData() {
     return __awaiter(this, void 0, void 0, function () {
         var response, data, grid;
@@ -59,9 +61,12 @@ function fetchData() {
         });
     });
 }
+fetchData();
+/* EVENTS */
 function showModal(description) {
-    var modal = document.getElementById('modal');
     modal.hidden = false;
     document.getElementById('description').textContent = description;
 }
-fetchData();
+closeButton.addEventListener('click', function () {
+    modal.hidden = true;
+});
