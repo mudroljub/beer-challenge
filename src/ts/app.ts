@@ -3,13 +3,22 @@ const modal = document.getElementById('modal') as HTMLDivElement;
 const orderBtn = document.getElementById('order-button') as HTMLButtonElement;
 const orderMenu = document.getElementById('dropdown') as HTMLDivElement;
 
+type Item = {
+  id: number;
+  name: string;
+  ibu: number;
+  abv: number;
+  description: string;
+  image_url: string;
+};
+
 async function fetchData() {
   const response = await fetch('https://api.jsonbin.io/v3/b/6630fd9be41b4d34e4ecd1f9')
   const data = await response.json()
 
   const container = document.getElementById('container')!
   
-  data.record.forEach((item: any) => {
+  data.record.forEach((item: Item) => {
     const div = document.createElement('div')
     div.className = `item bg${Math.min(Math.floor(item.ibu / 10), 9)}`
     div.innerHTML = `
@@ -27,7 +36,7 @@ fetchData()
 
 /* EVENTS */
 
-function showModal(item: any) {
+function showModal(item: Item) {
   modal.hidden = false
   document.getElementById('modal-description')!.textContent = item.description
   document.getElementById('modal-image')!.src = item.image_url
