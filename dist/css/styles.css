@@ -28,12 +28,12 @@ img {
 .bg9 {
   background-color: #f0f8ff;
 }
-#grid {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 16px;
 }
-#modal {
+.modal {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -42,6 +42,16 @@ img {
   padding: 20px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
   z-index: 9;
+  max-width: 300px;
+}
+.modal img {
+  max-width: 80px;
+}
+#order-button,
+#dropdown p {
+  margin: 2px;
+  padding: 8px;
+  background-color: #ffe4e1;
 }
 #close-button {
   position: absolute;

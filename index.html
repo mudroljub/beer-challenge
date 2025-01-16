@@ -6,16 +6,20 @@
 </head>
 
 <body>
-  <div id="grid"></div>
+  <div class="grid" id="container"></div>
 
-  <div id="modal" hidden>
+  <div id="modal" class="modal" hidden>
     <div id="modal-content">
       <button id="close-button">&times;</button>
-      <p id="description"></p>
-      <button id="dropdown-button">Options</button>
-      <div id="dropdown" hidden>
-        <p>Option 1</p>
-        <p>Option 2</p>
+
+      <img id="modal-image" />
+      <p id="modal-description"></p>
+
+      <button id="order-button">Order ▼</button>
+      <div id="dropdown" hidden class="btn">
+        <p class="btn">Glass ▶</p>
+        <p class="btn">Can ▶</p>
+        <p class="btn">Box ▶</p>
       </div>
     </div>
   </div>

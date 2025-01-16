@@ -12,23 +12,49 @@ img {
 @color8: #f5f5f5;
 @color9: #f0f8ff;
 
-.bg1 { background-color: @color1; }
-.bg2 { background-color: @color2; }
-.bg3 { background-color: @color3; }
-.bg4 { background-color: @color4; }
-.bg5 { background-color: @color5; }
-.bg6 { background-color: @color6; }
-.bg7 { background-color: @color7; }
-.bg8 { background-color: @color8; }
-.bg9 { background-color: @color9; }
+.bg1 {
+  background-color: @color1;
+}
 
-#grid {
+.bg2 {
+  background-color: @color2;
+}
+
+.bg3 {
+  background-color: @color3;
+}
+
+.bg4 {
+  background-color: @color4;
+}
+
+.bg5 {
+  background-color: @color5;
+}
+
+.bg6 {
+  background-color: @color6;
+}
+
+.bg7 {
+  background-color: @color7;
+}
+
+.bg8 {
+  background-color: @color8;
+}
+
+.bg9 {
+  background-color: @color9;
+}
+
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 16px;
 }
 
-#modal {
+.modal {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -37,6 +63,18 @@ img {
   padding: 20px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
   z-index: 9;
+  max-width: 300px;
+
+  img {
+    max-width: 80px;
+  }
+}
+
+#order-button,
+#dropdown p {
+  margin: 2px;
+  padding: 8px;
+  background-color: @color3;
 }
 
 #close-button {

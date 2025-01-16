@@ -37,9 +37,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var closeButton = document.getElementById('close-button');
 var modal = document.getElementById('modal');
+var orderBtn = document.getElementById('order-button');
+var orderMenu = document.getElementById('dropdown');
 function fetchData() {
     return __awaiter(this, void 0, void 0, function () {
-        var response, data, grid;
+        var response, data, container;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, fetch('https://api.jsonbin.io/v3/b/6630fd9be41b4d34e4ecd1f9')];
@@ -48,13 +50,13 @@ function fetchData() {
                     return [4 /*yield*/, response.json()];
                 case 2:
                     data = _a.sent();
-                    grid = document.getElementById('grid');
+                    container = document.getElementById('container');
                     data.record.forEach(function (item) {
                         var div = document.createElement('div');
                         div.className = "bg".concat(Math.min(Math.floor(item.ibu / 10), 9));
                         div.innerHTML = "\n      <h3>".concat(item.name, "</h3>\n      <p>IBU: ").concat(item.ibu, "</p>\n      <p>ABV: ").concat(item.abv, "</p>\n      <img src=\"").concat(item.image_url, "\" />\n    ");
-                        div.onclick = function () { return showModal(item.description); };
-                        grid.appendChild(div);
+                        div.onclick = function () { return showModal(item); };
+                        container.appendChild(div);
                     });
                     return [2 /*return*/];
             }
@@ -63,10 +65,14 @@ function fetchData() {
 }
 fetchData();
 /* EVENTS */
-function showModal(description) {
+function showModal(item) {
     modal.hidden = false;
-    document.getElementById('description').textContent = description;
+    document.getElementById('modal-description').textContent = item.description;
+    document.getElementById('modal-image').src = item.image_url;
 }
 closeButton.addEventListener('click', function () {
-    modal.hidden = true;
+    modal.hidden = orderMenu.hidden = true;
+});
+orderBtn.addEventListener('click', function () {
+    orderMenu.hidden = !orderMenu.hidden;
 });
