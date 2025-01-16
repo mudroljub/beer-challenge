@@ -48,7 +48,7 @@ img {
 }
 .item .ibu {
   position: absolute;
-  bottom: 120px;
+  bottom: 80px;
 }
 .item .abv {
   position: absolute;
@@ -57,6 +57,7 @@ img {
   transform: rotate(45deg);
   display: inline-block;
   background-color: yellow;
+  padding: 8px;
 }
 .ribbon {
   position: relative;
