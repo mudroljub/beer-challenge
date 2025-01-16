@@ -68,7 +68,8 @@ fetchData();
 function showModal(item) {
     modal.hidden = false;
     document.getElementById('modal-description').textContent = item.description;
-    document.getElementById('modal-image').src = item.image_url;
+    var modalImage = document.getElementById('modal-image');
+    modalImage.src = item.image_url;
 }
 closeButton.addEventListener('click', function () {
     modal.hidden = orderMenu.hidden = true;

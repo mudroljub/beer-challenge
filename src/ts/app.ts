@@ -39,7 +39,8 @@ fetchData()
 function showModal(item: Item) {
   modal.hidden = false
   document.getElementById('modal-description')!.textContent = item.description
-  document.getElementById('modal-image')!.src = item.image_url
+  const modalImage = document.getElementById('modal-image') as HTMLImageElement;
+  modalImage.src = item.image_url;  
 }
 
 closeButton.addEventListener('click', () => {
