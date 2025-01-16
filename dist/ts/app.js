@@ -53,8 +53,8 @@ function fetchData() {
                     container = document.getElementById('container');
                     data.record.forEach(function (item) {
                         var div = document.createElement('div');
-                        div.className = "bg".concat(Math.min(Math.floor(item.ibu / 10), 9));
-                        div.innerHTML = "\n      <h3>".concat(item.name, "</h3>\n      <p>IBU: ").concat(item.ibu, "</p>\n      <p>ABV: ").concat(item.abv, "</p>\n      <img src=\"").concat(item.image_url, "\" />\n    ");
+                        div.className = "item bg".concat(Math.min(Math.floor(item.ibu / 10), 9));
+                        div.innerHTML = "\n      <p class=\"ibu ribbon\">IBU: ".concat(item.ibu, "</p>\n      <p class=\"abv\">ABV: ").concat(item.abv, "</p>\n      <img src=\"").concat(item.image_url, "\" />\n      <h3>").concat(item.name, "</h3>\n    ");
                         div.onclick = function () { return showModal(item); };
                         container.appendChild(div);
                     });

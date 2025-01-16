@@ -11,12 +11,12 @@ async function fetchData() {
   
   data.record.forEach((item: any) => {
     const div = document.createElement('div')
-    div.className = `bg${Math.min(Math.floor(item.ibu / 10), 9)}`
+    div.className = `item bg${Math.min(Math.floor(item.ibu / 10), 9)}`
     div.innerHTML = `
-      <h3>${item.name}</h3>
-      <p>IBU: ${item.ibu}</p>
-      <p>ABV: ${item.abv}</p>
+      <p class="ibu ribbon">IBU: ${item.ibu}</p>
+      <p class="abv">ABV: ${item.abv}</p>
       <img src="${item.image_url}" />
+      <h3>${item.name}</h3>
     `
     div.onclick = () => showModal(item)
     container.appendChild(div)
