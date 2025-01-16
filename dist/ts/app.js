@@ -46,12 +46,11 @@ function fetchData() {
                     return [4 /*yield*/, response.json()];
                 case 2:
                     data = _a.sent();
-                    console.log(data);
                     grid = document.getElementById('grid');
                     data.record.forEach(function (item) {
                         var div = document.createElement('div');
-                        div.className = "bg".concat(Math.min(Math.floor(item.IBU / 10), 9));
-                        div.innerHTML = "<h3>".concat(item.title, "</h3><p>IBU: ").concat(item.IBU, "</p><p>ABV: ").concat(item.ABV, "</p><img src=\"").concat(item.picture, "\" />");
+                        div.className = "bg".concat(Math.min(Math.floor(item.ibu / 10), 9));
+                        div.innerHTML = "\n      <h3>".concat(item.name, "</h3>\n      <p>IBU: ").concat(item.ibu, "</p>\n      <p>ABV: ").concat(item.abv, "</p>\n      <img src=\"").concat(item.image_url, "\" />\n    ");
                         div.onclick = function () { return showModal(item.description); };
                         grid.appendChild(div);
                     });

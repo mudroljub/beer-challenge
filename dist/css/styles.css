@@ -1,11 +1,36 @@
+img {
+  max-width: 100%;
+}
 .bg1 {
   background-color: #f0f8ff;
 }
 .bg2 {
   background-color: #faebd7;
 }
+.bg3 {
+  background-color: #ffe4e1;
+}
+.bg4 {
+  background-color: #f5f5dc;
+}
+.bg5 {
+  background-color: #ffebcd;
+}
+.bg6 {
+  background-color: #ffdead;
+}
+.bg7 {
+  background-color: #f0fff0;
+}
+.bg8 {
+  background-color: #f5f5f5;
+}
+.bg9 {
+  background-color: #f0f8ff;
+}
 #grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
 }
 /*# sourceMappingURL=styles.css.map */
