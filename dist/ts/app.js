@@ -39,6 +39,7 @@ var closeButton = document.getElementById('close-button');
 var modal = document.getElementById('modal');
 var orderBtn = document.getElementById('order-button');
 var orderMenu = document.getElementById('dropdown');
+/* INIT */
 function fetchData() {
     return __awaiter(this, void 0, void 0, function () {
         var response, data, container;
